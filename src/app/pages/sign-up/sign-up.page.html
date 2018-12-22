@@ -1,0 +1,26 @@
+<ion-content padding>
+  <!-- <ion-img style=" margin: auto" src="/assets/icon/mainlogo.png"></ion-img> -->
+  <form #f="ngForm" (ngSubmit)="signUp(f)">
+    <ion-img [src]="profilePicture" id="profilePicture" (click)="chooseImage()"></ion-img>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required name="email" email ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">First name</ion-label>
+      <ion-input type="text" required name="firstname" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input type="text" required name="lastname" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required name="password" ngModel></ion-input>
+    </ion-item>
+    <br>
+    <ion-button shape="round" expand="full" type="submit">Sign me in!</ion-button>
+  </form>
+  <p text-center>Have an account? <a href="./login" style="text-decoration:none; color: #178ab2">Login here</a></p>
+
+</ion-content>
