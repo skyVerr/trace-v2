@@ -11,7 +11,7 @@ export class HomePage implements OnInit {
   constructor(private menuController: MenuController) { }
 
   ngOnInit() {
-    this.menuController.enable(true);
+    // this.menuController.enable(true);
     console.log('home working');
   }
 

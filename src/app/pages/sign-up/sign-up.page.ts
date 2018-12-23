@@ -31,7 +31,7 @@ export class SignUpPage implements OnInit {
   }
 
   ngOnInit() { 
-    this.menuController.enable(false);
+    // this.menuController.enable(false);
   }
 
   async chooseImage(){
@@ -70,7 +70,7 @@ export class SignUpPage implements OnInit {
       // let base64Image = 'data:image/jpeg;base64,' + imageData;
      this.profilePicture = this.webView.convertFileSrc(imageData);
      //Save image 
-     this.imageFile = imageData;
+    //  this.imageFile = imageData;
      console.log(imageData);
     }, (err) => {
       this.showError(err);
@@ -88,13 +88,13 @@ export class SignUpPage implements OnInit {
           formData.append(e,f.value[e]);
         });
 
-        if(!!this.imageFile){
-          formData.append('profile_picture',this.imageFile);
-        }
+        // if(!!this.imageFile){
+        //   formData.append('profile_picture',this.imageFile);
+        // }
 
         let token = await this.auth.signUp(formData).toPromise();
         this.storage.set('token',token);
-        // this.router.navigateByUrl('/home');
+        this.router.navigate(['/home']);
         // this.socketService.socket.emit('setId',this._auth.getDecodeToken().user.user_id);
        
       } catch (error) {
